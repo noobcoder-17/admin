@@ -1,0 +1,49 @@
+<style>
+    form{
+        border: 3px solid #fff;
+    }
+    input{
+        width: 100%;
+        padding: 15px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    button{
+        background-color: #44e644;
+        color: white;
+        padding: 16px 20px;
+        margin: 8px 0;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        border-radius: 10px;
+    }
+    button:hover{
+        opacity:0.8;
+    }
+    .container{
+        padding: 20px;
+        margin-top: 70px;
+        width: 60%;
+    }
+</style>
+
+<form action="/adminlogincheck" method="POST">
+    <div class="container">
+        <div>
+            {{#if this.hasadminnotloggedin}}
+                         <b style="color: red">INVALID UID OR PASSWORD</b>
+            {{/if}}
+        </div>
+        <label for ="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="adminusername" required>
+
+        <label for ="password"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="adminpassword" required>
+
+        <button type="submit">Login</button>
+
+    </div>
+</form>
